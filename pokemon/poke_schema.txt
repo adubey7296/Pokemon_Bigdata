@@ -1,0 +1,15 @@
+Schema : pokemon.csv
+
+	col1	s.no
+	col2	name
+	col3	type
+	col4	subtype
+	col5	total_stats
+	col6	hp
+	col7	attack
+	col8	defence
+	col9	special attack
+	col10	special defence
+	col11	speed
+	col12	generation
+	col13	legendary

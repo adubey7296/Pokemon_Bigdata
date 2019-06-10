@@ -1,0 +1,234 @@
+Q.1)List name & type of top 5 strongest(acco. to total_stats) pokemon.4
+
+	A = LOAD '/path/pokemon.csv' USING PigStorage(',') as (sno:int,name:cararray,type:chararray,subtype:chararray,total_stats:int,hp:int,atk:int,
+				def:int,sp_atk:int,sp_def:int,spd:int,gen:int,leg:chararray)
+
+	B = ORDER A by stat DESC;
+
+	C = LIMIT B5;
+
+	D = FOREACH C generate name,type;
+
+	dump D;
+
+Q.2)List top 3 strongest dragon type pokemon.
+
+	A = LOAD --------------------------------------------------------(same)
+
+	B = filter A by type == 'Dragon';
+
+	C = ORDER B by stat DESC;
+
+	D = LIMIT C5;
+
+	dump D;
+
+Q.3)List name of all pokemons with attack >= 100.
+
+	A = LOAD -------------------------------------------------------(same)
+
+	B = filter A by atk>=100;
+
+	C = FOREACH B generate name,atk;
+
+Q.4)List name and type of all legendary pokemon.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by leg == TRUE;
+
+	C = FOREACH B generate name,type,leg;
+
+	dump C;
+
+Q.5)List name of all pokemon with defence >= 100.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by def >=100;
+
+	C = FOREACH B generate name,def;
+
+	dump C;
+
+Q.6)List name,type & subtype of all pokemon with attack < 65.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by atk<65;
+
+	C = FOREACH B generate name,type,sub_type;
+
+	dump C;
+
+Q.7)List name,type & subtype of all pokemon with defence < 80.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by def<80;
+
+	C = FOREACH B generate name,type,subtype;
+
+	dump C;
+
+Q.8)List name of all pokemon with hp(health points) > 110.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by hp>110;
+ 
+	C = FOREACH B generate name;
+
+	dump C;
+
+Q.9)List names of fire type pokemons where attack and defence is b/w 80 & 120.
+
+	A = LOAD--------------------------------------------------------------(same)
+
+	B = filter A by type == 'Fire';
+
+	C = filter B by atk >=80 and atk<=120 and def>=80 and def<=120;
+
+	D = FOREACH C generate name,type,atk,def;
+
+	dump D;
+
+Q.10)List name of pokemon with same attack or defence power.
+
+	A = LOAD---------------------------------------------------------------(same)
+
+	B = filter A by atk==def;
+
+	C = FOREACH B generate name,atk,def;
+
+	dump C;
+
+Q.11)Find top 3 and bottom 3 pokemon with highest spl. atk(special attack).
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B =filter A by sp_atk DESC;
+
+	C = LIMIT B3;
+
+	D = ORDER A by sp_atk;
+
+	E = LIMIT D3;
+
+	F = UNION C,E;
+
+	G = ORDER F by sp_atk DESC;
+
+	H = FOREACH G generate name,sp_atk;
+
+	dump H;
+
+Q.12)Find top 3 and bottom 3 pokemon with highest spl. def(special defence).
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B =filter A by sp_def DESC;
+
+	C = LIMIT B3;
+
+	D = ORDER A by sp_def;
+
+	E = LIMIT D3;
+
+	F = UNION C,E;
+
+	G = ORDER F by sp_def DESC;
+
+	H = FOREACH G generate name,sp_def;
+
+	dump H;
+
+Q.13)List all generation 1 legendary pokemon.
+
+	A = LOAD---------------------------------------------------------(same)
+
+	B = filter A by leg=='TRUE' & gen==1;
+
+	C = FOREACH B generate name,gen,leg;
+
+	dump C;
+
+Q.14)List all legendary pokemon b/w 3rd and 5th generation.
+
+	A = LOAD------------------------------------------------------------(same)
+
+	B = filter A by leg=='TRUE' and gen>= and gen<=;
+
+	C = FOREACH B generate name,gen,leg;
+
+	dump C;
+
+Q.15)Find the name and type of top 3 legendary pokemon with highest speed.
+
+	A = LOAD--------------------------------------------------------(same)
+
+	B = filter A by leg=='TRUE';
+
+	C = ORDER B by spd DESC;
+
+	D = LIMT C3;
+
+	E = FOREACH D generate name,type,spd;
+
+	dump E;
+
+Q.16)Find the name of 10 dragon type pokemon with highest sp.atk.
+
+	A = LOAD-------------------------------------------------------(same)
+
+	B = filter A by type=='Dragon';
+
+	C = ORDER B by spd DESC;
+
+	D = LIMIT C10;
+
+	E = FOREACH D generate name,type,sp_atk;
+
+	dump E;
+
+Q.17)List all dragons type pokemon from 4th and 6th generation.
+
+	A = LOAD-----------------------------------------------------------(same)
+
+	B = filter A by type=='Dragon' and gen>=4 and gen<=6;
+
+	dump B;
+
+Q.18)Give the name of strongest fire type non-legendary pokemon.
+
+	A = LOAD----------------------------------------------------(same)
+
+	B = filter A by type=='Fire' and leg=='False';
+
+	C = ORDER B  by stat DESC;
+
+	D = LIMIT C1;
+
+	dump D;
+
+Q.19)List all pokemon whose subtype is poison and type is water.
+
+	A = LOAD-----------------------------------------------------------(same)
+
+	B = filter A by sub_type=='Poison' and type=='Water';
+
+	dump B;
+
+Q.20)List  5 electric pokemon with highest speed.
+
+	A = LOAD-------------------------------------------------------------(same)
+
+	B = filter A by type=='Electric';
+
+	C = ORDER B by spd DESC;
+
+	D = LIMIT C5;
+
+	E = FOREACH D generate name,type,spd;
+
+	dump E;
