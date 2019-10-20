@@ -232,3 +232,5 @@ Q.20)List  5 electric pokemon with highest speed.
 	E = FOREACH D generate name,type,spd;
 
 	dump E;
+	
+	//then print
