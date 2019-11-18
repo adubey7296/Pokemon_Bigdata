@@ -53,14 +53,14 @@ Schema : pokemon.csv
 
 ## Analysis
 Below are some highlights of my analysis:
-*List name & type of top 5 strongest(acco. to total_stats) pokemon.
-*List top 3 strongest dragon type pokemon.
-*List name of all pokemons with attack >= 100.
-*List name and type of all legendary pokemon.
-*List name of all pokemon with defence >= 100.
-*List name,type & subtype of all pokemon with attack < 65.
-*List name,type & subtype of all pokemon with defence < 80.
-*List name of all pokemon with hp(health points) > 110.
-*List names of fire type pokemons where attack and defence is b/w 80 & 120.
-*List name of pokemon with same attack or defence power.
+* List name & type of top 5 strongest(acco. to total_stats) pokemon.
+* List top 3 strongest dragon type pokemon.
+* List name of all pokemons with attack >= 100.
+* List name and type of all legendary pokemon.
+* List name of all pokemon with defence >= 100.
+* List name,type & subtype of all pokemon with attack < 65.
+* List name,type & subtype of all pokemon with defence < 80.
+* List name of all pokemon with hp(health points) > 110.
+* List names of fire type pokemons where attack and defence is b/w 80 & 120.
+* List name of pokemon with same attack or defence power.
 Check rest of analysis on https://github.com/adubey7296/Pokemon_Bigdata/blob/master/pokemon/pokemon.txt
