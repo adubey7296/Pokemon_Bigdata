@@ -31,8 +31,7 @@ SP Def: the base damage resistance against special attacks
 
 Speed: determines which pokemon attacks first each round
 
-Inspiration: The type of a pokemon cannot be inferred only by it's Attack and Deffence. It would be worthy to find which two variables can define the type of a pokemon, if any. Two variables can be plotted in a 2D space, and used as an example for machine learning. This could mean the creation of a visual example any geeky Machine Learning class would love.
-
+Inspiration: The type of a pokemon cannot be inferred only by it's Attack and Deffence. It would be worthy to find which two variables can define the type of a pokemon, if any.
 ###### Schema 
 
 Schema : pokemon.csv
