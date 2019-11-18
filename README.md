@@ -33,3 +33,20 @@ Speed: determines which pokemon attacks first each round
 
 Inspiration: The type of a pokemon cannot be inferred only by it's Attack and Deffence. It would be worthy to find which two variables can define the type of a pokemon, if any. Two variables can be plotted in a 2D space, and used as an example for machine learning. This could mean the creation of a visual example any geeky Machine Learning class would love.
 
+###### Schema 
+
+Schema : pokemon.csv
+
+	col1	s.no
+	col2	name
+	col3	type
+	col4	subtype
+	col5	total_stats
+	col6	hp
+	col7	attack
+	col8	defence
+	col9	special attack
+	col10	special defence
+	col11	speed
+	col12	generation
+	col13	legendary
