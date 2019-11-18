@@ -63,4 +63,5 @@ Below are some highlights of my analysis:
 * List name of all pokemon with hp(health points) > 110.
 * List names of fire type pokemons where attack and defence is b/w 80 & 120.
 * List name of pokemon with same attack or defence power.
+
 Check rest of analysis on https://github.com/adubey7296/Pokemon_Bigdata/blob/master/pokemon/pokemon.txt
